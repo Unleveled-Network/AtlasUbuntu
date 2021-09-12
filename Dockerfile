@@ -41,9 +41,6 @@ RUN dpkg --add-architecture i386 \
         libgssapi-krb5-2 \
         libcompress-raw-zlib-perl
 
-## configure locale
-RUN   update-locale lang=en_US.UTF-8 \
- &&   dpkg-reconfigure --frontend noninteractive locales
 
 COPY  ./entrypoint.sh /entrypoint.sh
 CMD   ["/bin/bash", "/entrypoint.sh"]
